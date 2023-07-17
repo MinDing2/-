@@ -20,7 +20,7 @@ class Solution {
         
         
         String anw ="";
-        String match = "[^\uAC00-\uD7A30-9a-zA-Z]";
+        String match = "[^a-zA-Z]";
         anw = answerToString.replaceAll(match,"");
         
      

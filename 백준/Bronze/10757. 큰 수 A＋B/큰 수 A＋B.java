@@ -8,7 +8,7 @@ public class Main {
         BigInteger b = in.nextBigInteger();
         BigInteger sum =a.add(b);
             
-        System.out.println(sum.toString());
+        System.out.println(sum);
         
 	}
 }

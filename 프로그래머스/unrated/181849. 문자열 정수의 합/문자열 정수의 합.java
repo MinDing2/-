@@ -5,7 +5,7 @@ class Solution {
             
         for(int i = 0; i < num_str.length(); i++){
          a[i] = num_str.charAt(i); 
-           answer += ((int)a[i] - 48) % 10;
+           answer += (a[i] - 48) % 10;
         }  
         
         return answer;

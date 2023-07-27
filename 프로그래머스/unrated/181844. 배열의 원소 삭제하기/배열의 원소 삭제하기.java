@@ -1,26 +1,56 @@
 import java.util.*;
+import java.math.*;
 
 public class Solution {
     public int[] solution(int[] arr, int[] delete_list) {
-        List<Integer> answerList = new ArrayList<>();
-
-        for (int element : arr) {
-            boolean found = false;
-            for (int deleteElement : delete_list) {
-                if (element == deleteElement) {
-                    found = true;
-                    break;
-                }
-            }
-            if (!found) {
-                answerList.add(element);
-            }
+		int kCnt = 0;
+		
+		for (int i = 0; i < arr.length; i++) {
+			for (int j = 0; j < delete_list.length; j++) {
+				if(arr[i] == delete_list[j]) {		//삭제할 원소랑 같아 
+                    kCnt++;	  
+				}
+			}
+		}
+        
+        //할당
+        int[] answer;
+        if(arr.length  - kCnt > 0){
+		    answer = new int[arr.length  - kCnt];   
+        }else{
+            answer = new int[0];
         }
-
-        int[] answer = new int[answerList.size()];
-        for (int i = 0; i < answerList.size(); i++) {
-            answer[i] = answerList.get(i);
-        }
+		int[] key;
+		if(kCnt > 0) {
+			key= new int[kCnt];
+		}else {
+			key = new int[0];
+		}
+        
+		int cnt = 0;
+        
+		for (int i = 0; i < arr.length; i++) {
+			for (int j = 0; j < delete_list.length; j++) {
+				if(arr[i] == delete_list[j]) {
+					key[cnt] = i;
+					cnt++;
+				}
+			}
+		}
+		
+		cnt = 0;
+		int cnt1 = 0;
+		
+		
+		for (int i = 0; i < arr.length; i++) {
+    if (key.length < 1) {
+        answer[i] = arr[i];
+    } else if (cnt1 < key.length && key[cnt1] == i) {
+        cnt1++;
+    } else {
+        answer[cnt++] = arr[i];
+    }
+}
 
         return answer;
     }

@@ -42,15 +42,25 @@ public class Solution {
 		int cnt1 = 0;
 		
 		
-		for (int i = 0; i < arr.length; i++) {
-    if (key.length < 1) {
-        answer[i] = arr[i];
-    } else if (cnt1 < key.length && key[cnt1] == i) {
-        cnt1++;
-    } else {
-        answer[cnt++] = arr[i];
-    }
-}
+// 		for (int i = 0; i < arr.length; i++) {
+//     if (key.length < 1) {
+//         answer[i] = arr[i];
+//     } else if (cnt1 < key.length && key[cnt1] == i) {
+//         cnt1++;
+//     } else {
+//         answer[cnt++] = arr[i];
+//     }
+// }
+        for (int i = 0; i < arr.length; i++) {
+				 if(key.length  < 1) {//같은게 없어
+					answer[i] = arr[i];
+				 }else if (cnt1 < key.length && key[cnt1] == i) {//키랑 맞아
+					cnt1++;          
+			     }else{
+                    answer[cnt++] = arr[i];
+					
+				}
+		}
 
         return answer;
     }

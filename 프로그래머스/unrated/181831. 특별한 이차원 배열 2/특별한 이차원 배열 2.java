@@ -4,15 +4,12 @@ class Solution {
 		
 		for (int i = 0; i < arr.length; i++) {
 			for (int j = 0; j < arr.length; j++) {
-				if(arr[i][j] == arr[j][i]) {
-					answer = 1;
-                }else if(arr[i][j] != arr[j][i]){
-                    answer = 0;
-                    break;
+				if(arr[i][j] != arr[j][i]) {
+                    return answer;	
+                    }
                 }
 			}
-		}
-        
-        return answer;
+         answer = 1;
+		 return answer;
+        }
     }
-}

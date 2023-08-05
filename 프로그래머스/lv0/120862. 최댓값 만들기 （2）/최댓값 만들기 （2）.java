@@ -8,7 +8,7 @@ class Solution {
          *
          */
         
-        int answer = -1000000000;
+        int answer = -100000000;
         
         for(int i = 0; i < numbers.length; i++){
             for(int j = 0; j < numbers.length; j++){

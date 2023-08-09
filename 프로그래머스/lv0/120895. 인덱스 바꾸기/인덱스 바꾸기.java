@@ -3,11 +3,11 @@ class Solution {
         String answer = "";       
         
         char first = my_string.charAt(num1);
-        char second = my_string.charAt(num2);
+        
         
         for(int i = 0; i < my_string.length(); i++){
             if( i == num1 ) {
-               answer += second;         
+               answer += my_string.charAt(num2);         
             }else if( i == num2 ){
                 answer += first;
             }else{

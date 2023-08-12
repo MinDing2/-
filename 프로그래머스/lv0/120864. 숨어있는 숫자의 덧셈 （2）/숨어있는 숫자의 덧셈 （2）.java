@@ -23,7 +23,7 @@ class Solution {
 			if(str[i].equals("")) {
 				str[i] = "0";
 			}
-			if(1 <= Integer.parseInt(str[i]) && Integer.parseInt(str[i]) < 1000  && str[i] != null) {
+			if(1 <= Integer.parseInt(str[i]) && Integer.parseInt(str[i]) < 1000 ) {
 				answer += Integer.parseInt(str[i]);
 			}
 		}

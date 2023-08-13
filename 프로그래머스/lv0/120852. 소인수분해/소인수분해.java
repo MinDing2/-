@@ -1,43 +1,30 @@
 class Solution {
     public int[] solution(int n) {
-        int[] answer = new int[1];
+     
         String str = ""; 
         int cnt = 0;
+        boolean tr = true;
         
-        for(int i = 2; i < n; i++){
-            if(n % i == 0){
-                cnt++;
-            }else if(cnt == 0){
-                answer[0] = n; 
-                return answer; 
-            }
-        }
-        
-        cnt = 0;
-        int cnt1 = 0;
-        for(int i = 2; i < n; i++){
+        for(int i = 2; i <= n; i++){
             while(n % i == 0){
-                n /= i;
-                if(cnt == 0){
-                    str += String.valueOf(i);
+               if(tr){
+                    str += String.valueOf(i) + " ";
+                    tr = false; 
                     cnt++;
-                    cnt1++;
-                }else if(n == 1){
-                    break;
                 }
+                n = n / i;
             }
-            cnt = 0; 
+            tr = true; 
         }
+
+    int[] answer = new int[cnt];
+    String[] st = str.split(" ");
         
-        
-    int[] answer1 = new int[cnt1];
-        
-    for(int i = 0; i < cnt1; i++){
-        answer1[i] = str.charAt(i) -48;
+    for(int i = 0; i < cnt; i++){
+        answer[i] = Integer.parseInt(st[i]);
     }
-    
-    return answer1;
         
+    return answer;  
         
     }
 }

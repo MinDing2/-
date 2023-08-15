@@ -3,17 +3,8 @@ class Solution {
     public int[] solution(int[] arr) {
        
         List<Integer> stk = new ArrayList<>();
-        int check = 0;
             
         for(int i = 0; i < arr.length; i++){
-    
-            if(stk.size() == 0){ 
-                stk.add(arr[i]);
-            }else if(stk.get(stk.size() - 1) < arr[i]){
-                stk.add(arr[i]);
-            }
-            
-             
            for(int j = 0; j < stk.size(); j++){
               if(stk.get(stk.size() - (j + 1)) >= arr[i]){ 
                     stk.remove(stk.size() - (j + 1));
@@ -23,8 +14,6 @@ class Solution {
             if(stk.size() == 0){
                 stk.add(arr[i]);
             }else if(stk.get(stk.size() - 1) < arr[i]){
-                stk.add(arr[i]);
-            }else{
                 stk.add(arr[i]);
             }
         }

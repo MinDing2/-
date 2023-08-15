@@ -4,7 +4,7 @@ class Solution {
     public BigInteger solution(int balls, int share) {
         
         
-        long bs = balls - share;
+        int bs = balls - share;
         BigInteger b = BigInteger.ONE;
         BigInteger s = BigInteger.ONE;
         BigInteger c = BigInteger.ONE;

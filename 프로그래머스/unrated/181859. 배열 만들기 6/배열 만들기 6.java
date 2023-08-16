@@ -15,7 +15,7 @@ class Solution {
             }
         }
         
-        if(stk.size() == 0){
+        if(stk.isEmpty()){
             stk.add(-1);
         }
         
